@@ -1,0 +1,153 @@
+/* @font-face {
+    font-family: 'Burisc';
+    src: url('../fonts/burisc-regular.woff2');
+    font-style: normal;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --beige: #FAEDD4;
+    --red: #FB3B2D;
+    --blue: #8899CC;
+    --orange: #FFAF00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Barlow, sans-serif;
+}
+
+body {
+    background-color: var(--beige);
+    position: relative;
+}
+
+button {
+    border-width: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--red);
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+h1,
+h2 {
+    color: var(--red);
+}
+
+section,
+header {
+    max-width: 88%;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5% 3%;
+    border-bottom: 2px solid var(--red);
+}
+
+.header__logo {
+    padding-top: 10px;
+}
+
+.header__apple {
+    margin-right: 30px;
+}
+
+.header__login {
+    font-size: 19px;
+}
+
+.header__sign-in {
+    margin-right: 28px;
+}
+
+.header__sign-up {
+    border: 1px solid var(--red);
+    padding: 8px 15px;
+}
+
+.header__sign-up:hover {
+    border: 1px solid var(--beige);
+    color: var(--beige);
+    background-color: var(--red);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Nav */
+
+.nav {
+    max-width: 20%;
+    position: absolute;
+    top: 0;
+    right: -3.7%;
+    text-align: center;
+    font-size: 30px;
+    transform: rotate(90deg);
+}
+
+.nav__item {
+    font-weight: 400;
+    height: 80px;
+    width: 800px;
+    padding-top: 20px;
+}
+
+.nav__about {
+    background-color: var(--blue);
+}
+
+.nav__news {
+    background-color: var(--orange);
+}
+
+.nav__menu {
+    background-color: var(--red);
+}
+
+/* Banner */
+
+.banner {
+    display: flex;
+}
+
+.banner__left {
+    border-right: 2px solid var(--red);
+    width: 71%;
+}
+
+.banner__line {
+    background-color: var(--red);
+    width: 100%;
+    height: 2px;
+}
+
+.banner__title {
+    padding-top: 185px;
+    font-size: 65px;
+    font-weight: 400;
+    margin-left: 4%;
+}
+
+.banner__text {
+    font-size: 19px;
+    margin-left: 3%;
+}
+
+.banner__btn {
+    font-size: 37px;
+}

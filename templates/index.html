@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taster - The best of street food at home.</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header class="header">
+        <img class="header__logo" src="{% static 'images/logo.svg' %}" alt="logo">
+        <div class="header__store">
+            <a href="#"><img src="{% static 'images/googlestore.svg' %}" alt="apple" class="header__apple"></a>
+            <a href="#"><img src="{% static 'images/appstore.svg' %}" alt="google" class="header__google"></a>
+        </div>
+        <div class="header__login">
+            <a class="header__sign-in" href="#">SING IN</a>
+            <a class="header__sign-up" href="#">SING UP</a>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="banner__left">
+            <h1 class="banner__title">The best of street food at home</h1>
+            <div class="banner__line"></div>
+            <p class="banner__text">Taster is a collection of online restaurants dedicated to bringing the best of street food to you.</p>
+            <button class="banner__btn">Discover our brands</button>
+        </div>
+        <div class="banner__right">
+            <img src="{% static 'images/burger.png' %}" alt="burger" class="banner__image">
+        </div>
+    </section>
+
+    <nav class="nav">
+        <div class="nav__item nav__menu">Menu</div>
+        <div class="nav__item nav__news">News</div>
+        <div class="nav__item nav__about">Who we are</div>
+    </nav>
+
+</body>
+
+</html>
