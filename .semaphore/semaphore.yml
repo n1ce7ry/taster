@@ -9,5 +9,4 @@ blocks:
     task:
       jobs:
         - name: Pip
-          commands:
-            - poetry shell
+          commands: []
