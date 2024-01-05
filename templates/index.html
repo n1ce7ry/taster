@@ -24,16 +24,73 @@
         </div>
     </header>
 
+    <div class="geo">
+        <p class="geo__text">
+            Restaurateur? Join the Taster Platform and rapidly launch one of our iconic virtual restaurant brands from your existing kitchen!
+        </p>
+        <div class="geo__links">
+            <a class="geo__link" href="">BECOME A PARTNER</a>
+            <a class="geo__link" href="">LEARN MORE</a>
+        </div>
+    </div>
+
     <section class="banner">
         <div class="banner__left">
             <h1 class="banner__title">The best of street food at home</h1>
-            <div class="banner__line"></div>
+            <div class="line"></div>
             <p class="banner__text">Taster is a collection of online restaurants dedicated to bringing the best of street food to you.</p>
-            <button class="banner__btn">Discover our brands</button>
+            <div class="line"></div>
+            <a class="banner__btn">Check our menu</a>
         </div>
         <div class="banner__right">
-            <img src="{% static 'images/burger.png' %}" alt="burger" class="banner__image">
+            <img class="banner__image" src="{% static 'images/burger.png' %}" alt="burger">
         </div>
+    </section>
+
+    <section class="stats">
+        <img class="stats__img" src="{% static 'images/burgers.png' %}" alt="burgers">
+
+        <h2 class="stats__title">Bitesize Stats</h2>
+
+        <div class="line"></div>
+
+        <div class="stats__line">
+            <div class="stats__item pl">
+                <img src="{% static 'images/cal.svg' %}" class="stats__icon" alt="calendar"></img>
+                <div class="stats__text">4<br>Years</div>
+            </div>
+            <div class="stats__item pl">
+                <img src="{% static 'images/cheese.svg' %}" class="stats__icon" alt="cheese"></img>
+                <div class="stats__text">436,256<br>Cheese Slices</div>
+            </div>
+            <div class="stats__item">
+                <img src="{% static 'images/potato.svg' %}" class="stats__icon" alt="potato"></img>
+                <div class="stats__text">9.2 million<br>Sweet Potato<br>Fries</div>
+            </div>
+        </div>
+
+        <div class="stats__line">
+            <div class="stats__item">
+                <img src="{% static 'images/noodle.svg' %}" class="stats__icon" alt="noodle"></img>
+                <div class="stats__text">7,104 kms<br>of Noodles</div>
+            </div>
+            <div class="stats__item">
+                <img src="{% static 'images/shrimp.svg' %}" class="stats__icon" alt="shrimp"></img>
+                <div class="stats__text">314,134<br>Tiger Prawns</div>
+            </div>
+            <div class="stats__item">
+                <img src="{% static 'images/bike.svg' %}" class="stats__icon" alt="bike"></img>
+                <div class="stats__text">1,000,000+<br>Rides</div>
+            </div>
+        </div>
+
+        <div class="stats__numbers">
+            <span class="stats__number">100 Restaurants</span>
+            <span class="stats__number">25 Cities</span>
+            <span class="stats__number">5 Brands</span>
+            <span class="stats__number">And More!</span>
+        </div>
+
     </section>
 
     <nav class="nav">
@@ -41,6 +98,37 @@
         <div class="nav__item nav__news">News</div>
         <div class="nav__item nav__about">Who we are</div>
     </nav>
+
+    <footer class="footer">
+        <div class="footer__rest">
+            <p class="footer__title">Our restaurants</p>
+            <a class="footer__link" href="#">Bian Dang</a>
+            <a class="footer__link" href="#">A Burgers</a>
+            <a class="footer__link" href="#">Mission Saigon</a>
+            <a class="footer__link" href="#">Out Fry</a>
+            <a class="footer__link" href="#">Stacksando</a>
+        </div>
+        <div class="footer__find_us">
+            <p class="footer__title">Find us</p>
+            <p class="footer__text">Address</p>
+            <p class="footer__text">Sorry, we’re just a digital food court</p>
+            <p class="footer__order">Order on</p>
+            <a class="footer__link" href="#">Download on Android</a>
+            <a class="footer__link" href="#">Download on IOS</a>
+        </div>
+        <div class="footer__corporate">
+            <p class="footer__title">Corporate</p>
+            <a class="footer__link" href="#">Contact</a>
+            <a class="footer__link" href="#">Our story</a>
+            <a class="footer__link" href="#">Jobs</a>
+            <a class="footer__link" href="#">Support</a>
+        </div>
+        <div class="footer__socials">
+            <p class="footer__title">Socials</p>
+            <a class="footer__link" href="#">Instagram</a>
+            <a class="footer__link" href="#">Facebook</a>
+        </div>
+    </footer>
 
 </body>
 
