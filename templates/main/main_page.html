@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page-title %}
+Taster - The best of street food at home.
+{% endblock %}
+
+{% block body %}
+
+<div class="geo animate__animated animate__fadeInLeft animate__delay-1s">
+    <p class="geo__text">
+        Restaurateur? Join the Taster Platform and rapidly launch one of our iconic virtual restaurant brands from your
+        existing kitchen!
+    </p>
+    <div class="geo__links">
+        <a class="geo__link" href="">BECOME A PARTNER</a>
+        <a class="geo__link" href="">LEARN MORE</a>
+    </div>
+</div>
+
+<section class="banner">
+    <div class="banner__left">
+        <h1 class="banner__title">The best of street food at home</h1>
+        <div class="line"></div>
+        <p class="banner__text">Taster is a collection of online restaurants dedicated to bringing the best of street
+            food to you.</p>
+        <div class="line"></div>
+        <a class="banner__btn hvr-sweep-to-right">Check our menu</a>
+    </div>
+    <div class="banner__right">
+        <img class="banner__image" src="{% static 'images/burger.png' %}" alt="burger">
+    </div>
+</section>
+
+<section class="stats">
+    <img class="stats__img" src="{% static 'images/burgers.png' %}" alt="burgers">
+
+    <h2 class="stats__title">Bitesize Stats</h2>
+
+    <div class="line"></div>
+
+    <div class="stats__line">
+        <div class="stats__item pl">
+            <img src="{% static 'images/cal.svg' %}" class="stats__icon" alt="calendar"></img>
+            <div class="stats__text">4<br>Years</div>
+        </div>
+        <div class="stats__item pl">
+            <img src="{% static 'images/cheese.svg' %}" class="stats__icon" alt="cheese"></img>
+            <div class="stats__text">436,256<br>Cheese Slices</div>
+        </div>
+        <div class="stats__item">
+            <img src="{% static 'images/potato.svg' %}" class="stats__icon" alt="potato"></img>
+            <div class="stats__text">9.2 million<br>Sweet Potato<br>Fries</div>
+        </div>
+    </div>
+
+    <div class="stats__line">
+        <div class="stats__item">
+            <img src="{% static 'images/noodle.svg' %}" class="stats__icon" alt="noodle"></img>
+            <div class="stats__text">7,104 kms<br>of Noodles</div>
+        </div>
+        <div class="stats__item">
+            <img src="{% static 'images/shrimp.svg' %}" class="stats__icon" alt="shrimp"></img>
+            <div class="stats__text">314,134<br>Tiger Prawns</div>
+        </div>
+        <div class="stats__item">
+            <img src="{% static 'images/bike.svg' %}" class="stats__icon" alt="bike"></img>
+            <div class="stats__text">1,000,000+<br>Rides</div>
+        </div>
+    </div>
+
+    <div class="stats__numbers">
+        <span class="stats__number">100 Restaurants</span>
+        <span class="stats__number">25 Cities</span>
+        <span class="stats__number">5 Brands</span>
+        <span class="stats__number">And More!</span>
+    </div>
+
+</section>
+
+{% endblock %}

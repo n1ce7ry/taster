@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page-title %}
+Login | Food delivery 24/7 | Order food at home with delivery in your city
+{% endblock %}
+
+{% block body %}
+
+<h1 class="welcome">
+    Welcome back! 👋🏻
+</h1>
+
+<div class="login">
+    
+    <div class="login__left">
+        <form method="post" class="login__form">
+            {% csrf_token %}
+            <input type="text" class="login__input" tabindex="1" placeholder="Enter the name"><br>
+            <input type="password" class="login__input" tabindex="2" placeholder="Enter the password"><br>
+            <button type="submit" class="login__btn hvr-sweep-to-right">Login</button>
+        </form>
+        <p class="login__text">Do not have an account? <a href="#" class="register">Register</a></p>
+    </div>
+
+    <div class="login__right">
+        <img src="{% static 'images/login.svg' %}" alt="" class="login__image">
+    </div>
+
+</div>
+
+{% endblock %}
