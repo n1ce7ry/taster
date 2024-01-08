@@ -1,10 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap');
+@font-face {
+    font-family: "Barlow";
+    font-style: light;
+    font-weight: 300;
+    src: local("Barlow"),
+         url("../fonts/Barlow-Light.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Barlow"),
+         url("../fonts/Barlow-Regular.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-style: medium;
+    font-weight: 500;
+    src: local("Barlow"),
+         url("../fonts/Barlow-Medium.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-weight: 600;
+    src: local("Barlow"),
+         url("../fonts/Barlow-SemiBold.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-style: bold;
+    font-weight: 700;
+    src: local("Barlow"),
+         url("../fonts/Barlow-Bold.woff2") format("woff2"),
+}
 
 @font-face {
     font-family: "Input";
     font-style: normal;
     font-weight: 400;
-    src: local("Input"),
+    src: local("InputMono"),
          url("../fonts/InputMono-Regular.woff") format("woff"),
 }
 
@@ -358,7 +395,7 @@ header, footer {
     margin-bottom: 5px;
 }
 
-/* Login */
+/* Auth */
 
 .welcome {
     background-color: var(--red);
@@ -368,26 +405,26 @@ header, footer {
     font-weight: 500;
 }
 
-.login {
+.auth {
     display: flex;
     justify-content: space-between;
     max-width: 87.45%;
     border-bottom: 2px solid var(--red);
 }
 
-.login__left {
-    padding: 70px 81px 160px 3%;
+.auth__left {
+    padding: 70px 81px 80px 3%;
     width: 60%;
     border-right: 2px solid var(--red);
 }
 
-.login__right {
+.auth__right {
     width: 40%;
     text-align: center;
     padding: 30px 0;
 }
 
-.login__input {
+.auth__input {
     background-color: var(--beige);
     border: 2px solid var(--red);
     padding: 28px 33px;
@@ -399,15 +436,15 @@ header, footer {
     box-shadow: 8px 5px 2px red;;
 }
 
-.login__input > placeholder {
-    font-size: 18px;
+.auth__input > placeholder {
+    font-size: 48px;
 }
 
-.login__image {
+.auth__image {
     max-width: 60%;
 }
 
-.login__btn {
+.auth__btn {
     background-color: var(--red);
     border: 2px solid var(--red);
     padding: 16px 16px;
@@ -419,12 +456,18 @@ header, footer {
     color: var(--beige);
 }
 
-.login__text {
+.auth__text {
     font-size: 18px;
 }
 
 .register {
     text-decoration: underline;
+}
+
+.sing_up__image {
+    max-width: 82%;
+    margin-top: 45px;
+    margin-right: 50px;
 }
 
 ::-webkit-input-placeholder {
@@ -439,3 +482,233 @@ header, footer {
  :-ms-input-placeholder {
     color: var(--gray);
  }
+
+/* News */
+
+.featured_news {
+    max-width: 87.45%;
+    display: flex;
+    border-bottom: 2px solid var(--red);
+    font-weight: 400;
+}
+
+.featured_news__left {
+    width: 60%;
+    border-right: 2px solid var(--red);
+    padding-bottom: 50px;
+}
+
+.featured_news__right {
+    width: 40%;
+}
+
+.featured_news__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.featured_news__title {
+    background-color: var(--red);
+    color: var(--beige);
+    padding: 35px 0 35px 5%;
+    font-weight: 400;
+    font-size: 90px;
+}
+
+.featured_news__date {
+    font-size: 18px;
+    color: var(--gray);
+}
+
+.featured_news__subtitle {
+    font-size: 42px;
+    color: black;
+    padding-left: 5%;
+    margin-top: 25px;
+    max-width: 85%;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.featured_news__subtitle > a:hover {
+    text-decoration-line: underline;
+}
+
+.featured_news__subtitle > a {
+    color: black;
+}
+
+.featured_news__img {
+    max-width: 85%;
+    margin: 50px 0 30px 0;
+    padding-left: 5%;
+}
+
+.featured_news__card {
+    padding: 30px 0 30px 44px;
+    border-bottom: 2px solid var(--red);
+}
+
+.featured_news__card:nth-child(4) {
+    border-bottom: none;
+}
+
+.card__img {
+    width: 50%;
+}
+
+.card__text {
+    font-size: 30px;
+    color: black;
+    margin-top: 18px;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.card__text > a:hover {
+    text-decoration-line: underline;
+}
+
+.card__left {
+    width: 60%;
+}
+
+.card__right {
+    width: 40%;
+    text-align: center;
+}
+
+.pl-4 {
+    padding-left: 5%;
+}
+
+.latest_news {
+    display: flex;
+    justify-content: space-between;
+    width: 87.45%;
+    margin-top: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--red);
+}
+
+.latest_news__left {
+    width: 30%;
+    padding-left: 3%;
+}
+
+.latest_news__right {
+    width: 70%;
+    font-size: 26px;
+}
+
+.latest_news__title {
+    font-size: 36px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.latest_news__link {
+    color: var(--red);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.latest_news__date {
+    color: var(--gray);
+}
+
+.latest_news__link:hover {
+    text-decoration-line: underline;
+}
+
+.latest_news__card {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    border-bottom: 2px solid var(--red);
+}
+
+.latest_news__text:hover {
+    text-decoration-line: underline;
+}
+
+.latest_news__card:nth-child(1) {
+    padding-top: 0;
+}
+
+.latest_news__card:last-child {
+    border-bottom: none;
+}
+
+/* Menu */
+
+.menu {
+    max-width: 87.45%;
+}
+
+.menu__title {
+    background-color: var(--red);
+    color: var(--beige);
+    padding: 35px 0 35px 3%;
+    font-weight: 400;
+    font-size: 90px;
+}
+
+.menu__food {
+    padding: 45px 3% 55px 3%;
+    border-bottom: 2px solid var(--red);
+}
+
+.menu__subtitle {
+    font-size: 42px;
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.menu__link {
+    font-size: 42px;
+    color: var(--red);
+    font-weight: 600;
+    float: right;
+}
+
+.menu__link:hover {
+    text-decoration-line: underline;
+}
+
+.foods {
+    display: flex;
+}
+
+.food__name, .food__button {
+    margin-left: 15%;
+}
+
+.food__name {
+    font-size: 22px;
+}
+
+.food__weight {
+    font-size: 22px;
+    color: var(--gray);
+    margin: 10px 0;
+    padding-left: 15%;
+}
+
+.food__button {
+    background: var(--beige);
+    color: var(--red);
+    padding: 5px 10px;
+    border: 2px solid var(--red);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.food__img {
+    width: 300px;
+    height: 199px;
+}

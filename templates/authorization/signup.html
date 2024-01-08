@@ -3,13 +3,13 @@
 {% load static %}
 
 {% block page-title %}
-Login | Food delivery 24/7 | Order food at home with delivery in your city
+Sign Up | Food delivery 24/7 | Order food at home with delivery in your city
 {% endblock %}
 
 {% block body %}
 
 <h1 class="welcome">
-    Welcome back! 👋🏻
+    Welcome to taster! 👋🏻
 </h1>
 
 <div class="auth">
@@ -18,14 +18,15 @@ Login | Food delivery 24/7 | Order food at home with delivery in your city
         <form method="post" class="auth__form">
             {% csrf_token %}
             <input type="text" class="auth__input" tabindex="1" placeholder="Enter the name"><br>
-            <input type="password" class="auth__input" tabindex="2" placeholder="Enter the password"><br>
+            <input type="email" class="auth__input" tabindex="2" placeholder="Enter the email"><br>
+            <input type="password" class="auth__input" tabindex="3" placeholder="Enter the password"><br>
             <button type="submit" class="auth__btn hvr-sweep-to-right">Login</button>
         </form>
-        <p class="auth__text">Do not have an account? <a href="{% url 'sign_up' %}" class="register">Register</a></p>
+        <p class="auth__text">Already have an account? <a href="{% url 'login' %}" class="register">Login</a></p>
     </div>
 
     <div class="auth__right">
-        <img src="{% static 'images/login.svg' %}" alt="vendor" class="auth__image">
+        <img src="{% static 'images/sign_up.svg' %}" alt="bike" class="sing_up__image">
     </div>
 
 </div>

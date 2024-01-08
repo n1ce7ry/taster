@@ -29,8 +29,7 @@ INSTALLED_APPS = [
     
     'main.apps.MainConfig',
     'news.apps.NewsConfig',
-    'store.apps.StoreConfig',
-    'authorization.apps.AuthorizationConfig',
+    'menu.apps.MenuConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +122,6 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

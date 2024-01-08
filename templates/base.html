@@ -22,15 +22,15 @@
         </div>
         <div class="header__login">
             <a class="header__sign-in" href="{% url 'login' %}">SING IN</a>
-            <a class="header__sign-up" href="#">SING UP</a>
+            <a class="header__sign-up" href="{% url 'sign_up' %}">SING UP</a>
         </div>
     </header>
 
     {% block body %} {% endblock %}
 
     <nav class="nav">
-        <a class="nav__item nav__menu hvr-grow">Menu</a>
-        <a class="nav__item nav__news hvr-grow">News</a>
+        <a href="{% url 'menu' %}" class="nav__item nav__menu hvr-grow">Menu</a>
+        <a href="{% url 'news' %}" class="nav__item nav__news hvr-grow">News</a>
         <a class="nav__item nav__about hvr-grow">Who we are</a>
     </nav>
 

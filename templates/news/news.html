@@ -1,9 +1,119 @@
 {% extends 'base.html' %}
 
-{% block page-title %}
+{% load static %}
 
+{% block page-title %}
+Latest news, promotions and updates from your favorite taster food delivery service
 {% endblock %}
 
 {% block body %}
+
+<div class="featured_news">
+    <div class="featured_news__left">
+        <h1 class="featured_news__title">Featured News</h1>
+        <img src="{% static 'images/area.png' %}" alt="delivery area" class="featured_news__img">
+        <p class="featured_news__date pl-4">07/25/2023</p>
+        <p class="featured_news__subtitle"><a href="#">Taster expands delivery area: now in your neighborhood!</a></p>
+    </div>
+    <div class="featured_news__right">
+        <div class="featured_news__card">
+            <div class="card__left">
+                <p class="featured_news__date">07/15/2023</p>
+                <p class="card__text">
+                    <a class="card__text" href="{% url 'login' %}">
+                    4Grubhub and Amazon
+                    Extend One-Year Free
+                    Grubhub+ Offer for your 300 backs...
+                    </a>
+                </p>
+            </div>
+            <div class="card__right">
+                <img src="{% static 'images/card.jpeg' %}" alt="news" class="card__img">
+            </div>
+        </div>
+        <div class="featured_news__card">
+            <div class="card__left">
+                <p class="featured_news__date">07/15/2023</p>
+                <p class="card__text">
+                    <a class="card__text" href="{% url 'login' %}">
+                    4Grubhub and Amazon
+                    Extend One-Year Free
+                    Grubhub+ Offer for your 300 backs...
+                    </a>
+                </p>
+            </div>
+            <div class="card__right">
+                <img src="{% static 'images/card.jpeg' %}" alt="news" class="card__img">
+            </div>
+        </div>
+        <div class="featured_news__card">
+            <div class="card__left">
+                <p class="featured_news__date">07/15/2023</p>
+                <p class="card__text">
+                    <a class="card__text" href="{% url 'login' %}">
+                    4Grubhub and Amazon
+                    Extend One-Year Free
+                    Grubhub+ Offer for your 300 backs...
+                    </a>
+                </p>
+            </div>
+            <div class="card__right">
+                <img src="{% static 'images/card.jpeg' %}" alt="news" class="card__img">
+            </div>
+        </div>
+        <div class="featured_news__card">
+            <div class="card__left">
+                <p class="featured_news__date">07/15/2023</p>
+                <p class="card__text">
+                    <a class="card__text" href="{% url 'login' %}">
+                    4Grubhub and Amazon
+                    Extend One-Year Free
+                    Grubhub+ Offer for your 300 backs...
+                    </a>
+                </p>
+            </div>
+            <div class="card__right">
+                <img src="{% static 'images/card.jpeg' %}" alt="news" class="card__img">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="latest_news">
+    <div class="latest_news__left">
+        <h3 class="latest_news__title">Latest News</h3>
+        <a href="#" class="latest_news__link">EXPLORE ALL</a>
+    </div>
+    <div class="latest_news__right">
+        <div class="latest_news__card">
+            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
+            <p class="latest_news__date">Dec 21, 2023</p>
+        </div>
+        <div class="latest_news__card">
+            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
+            <p class="latest_news__date">Dec 21, 2023</p>
+        </div>
+        <div class="latest_news__card">
+            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
+            <p class="latest_news__date">Dec 21, 2023</p>
+        </div>
+        <div class="latest_news__card">
+            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
+            <p class="latest_news__date">Dec 21, 2023</p>
+        </div>
+        <div class="latest_news__card">
+            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
+            <p class="latest_news__date">Dec 21, 2023</p>
+        </div>
+        <div class="latest_news__card">
+            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
+            <p class="latest_news__date">Dec 21, 2023</p>
+        </div>
+        <div class="latest_news__card">
+            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
+            <p class="latest_news__date">Dec 21, 2023</p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

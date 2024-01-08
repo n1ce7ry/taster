@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page-title %}
+Taster menu: fresh ingredients, wide selection, fast delivery
+{% endblock %}
+
+{% block body %}
+
+<div class="menu">
+    <h1 class="menu__title">Menu</h1>
+
+    {% for food_type in food_types %}
+    <div class="menu__food">
+        <h2 class="menu__subtitle">{{ food_type.name }}</h2>
+        <span class="menu__link">EXPLORE ALL</span>
+        <div class="foods">
+            {% for food in foods %}
+                {% if food.food_type == food_type %}
+                    <div class="food">
+                        <img class="food__img" src="{{ food.image.url }}"
+                            alt="{{ food.name }}">
+                        <p class="food__name">{{ food.name }}</p>
+                        <p class="food__weight">{{ food.weight }}g</p>
+                        <button class="food__button">£{{ food.price }} <img src="{% static 'images/cross.svg' %}" alt="cross"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
