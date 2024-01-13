@@ -17,9 +17,13 @@ Sign Up | Food delivery 24/7 | Order food at home with delivery in your city
     <div class="auth__left">
         <form method="post" class="auth__form">
             {% csrf_token %}
-            <input type="text" class="auth__input" tabindex="1" placeholder="Enter the name"><br>
+            {{ user_form.username }}
+            {{ user_form.email }}
+            {{ user_form.password }}
+            {{ user_form.password_repeat }}
+            <!-- <input type="text" class="auth__input" tabindex="1" placeholder="Enter the name"><br>
             <input type="email" class="auth__input" tabindex="2" placeholder="Enter the email"><br>
-            <input type="password" class="auth__input" tabindex="3" placeholder="Enter the password"><br>
+            <input type="password" class="auth__input" tabindex="3" placeholder="Enter the password"><br> -->
             <button type="submit" class="auth__btn hvr-sweep-to-right">Login</button>
         </form>
         <p class="auth__text">Already have an account? <a href="{% url 'login' %}" class="register">Login</a></p>

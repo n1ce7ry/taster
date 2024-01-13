@@ -23,7 +23,7 @@ Taster menu: fresh ingredients, wide selection, fast delivery
                             alt="{{ food.name }}">
                         <p class="food__name">{{ food.name }}</p>
                         <p class="food__weight">{{ food.weight }}g</p>
-                        <button class="food__button">£{{ food.price }} <img src="{% static 'images/cross.svg' %}" alt="cross"></button>
+                        <button class="food__button hvr-bounce-to-bottom">£{{ food.price }} <span>+</span></button>
                     </div>
                 {% endif %}
             {% endfor %}

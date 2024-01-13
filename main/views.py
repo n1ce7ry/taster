@@ -1,13 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import UserRegistrationForm
 
 
 def home(request):
     return render(request, 'main/main_page.html')
 
 
-def login(request):
-    return render(request, 'authorization/login.html')
+def about(request):
+    return render(request, 'main/about.html')
 
 
-def sign_up(request):
-    return render(request, 'authorization/signup.html')
+def register(request):
+    if request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
+        if user_form.is_valid():
+            new_user = user_form.save(commit=False)
+            new_user.set_password(user_form.cleaned_data['password'])
+            new_user.save()
+            return redirect('/login/')
+    else:
+        user_form = UserRegistrationForm()
+    return render(request, 'authorization/signup.html', {'user_form': user_form})

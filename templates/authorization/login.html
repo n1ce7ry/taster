@@ -17,8 +17,8 @@ Login | Food delivery 24/7 | Order food at home with delivery in your city
     <div class="auth__left">
         <form method="post" class="auth__form">
             {% csrf_token %}
-            <input type="text" class="auth__input" tabindex="1" placeholder="Enter the name"><br>
-            <input type="password" class="auth__input" tabindex="2" placeholder="Enter the password"><br>
+            {{ form.username }}
+            {{ form.password }}
             <button type="submit" class="auth__btn hvr-sweep-to-right">Login</button>
         </form>
         <p class="auth__text">Do not have an account? <a href="{% url 'sign_up' %}" class="register">Register</a></p>

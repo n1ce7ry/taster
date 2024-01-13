@@ -1,73 +1,77 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block page-title %}{% endblock %}</title>
-    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-
-<body>
-
-    <header class="header">
-        <a href="{% url 'home__page' %}"><img class="header__logo" src="{% static 'images/logo.svg' %}" alt="logo"></a>
-        <div class="header__store">
-            <a href="#"><img src="{% static 'images/googlestore.svg' %}" alt="apple" class="header__apple"></a>
-            <a href="#"><img src="{% static 'images/appstore.svg' %}" alt="google" class="header__google"></a>
-        </div>
-        <div class="header__login">
-            <a class="header__sign-in" href="{% url 'login' %}">SING IN</a>
-            <a class="header__sign-up" href="{% url 'sign_up' %}">SING UP</a>
-        </div>
-    </header>
-
-    {% block body %} {% endblock %}
-
-    <nav class="nav">
-        <a href="{% url 'menu' %}" class="nav__item nav__menu hvr-grow">Menu</a>
-        <a href="{% url 'news' %}" class="nav__item nav__news hvr-grow">News</a>
-        <a class="nav__item nav__about hvr-grow">Who we are</a>
-    </nav>
-
-    <footer class="footer">
-        <div class="footer__rest">
-            <p class="footer__title">Our restaurants</p>
-            <a class="footer__link" href="#">Bian Dang</a>
-            <a class="footer__link" href="#">A Burgers</a>
-            <a class="footer__link" href="#">Mission Saigon</a>
-            <a class="footer__link" href="#">Out Fry</a>
-            <a class="footer__link" href="#">Stacksando</a>
-        </div>
-        <div class="footer__find_us">
-            <p class="footer__title">Find us</p>
-            <p class="footer__text">Address</p>
-            <p class="footer__text">Sorry, we’re just a digital food court</p>
-            <p class="footer__order">Order on</p>
-            <a class="footer__link" href="#">Download on Android</a>
-            <a class="footer__link" href="#">Download on IOS</a>
-        </div>
-        <div class="footer__corporate">
-            <p class="footer__title">Corporate</p>
-            <a class="footer__link" href="#">Contact</a>
-            <a class="footer__link" href="#">Our story</a>
-            <a class="footer__link" href="#">Jobs</a>
-            <a class="footer__link" href="#">Support</a>
-        </div>
-        <div class="footer__socials">
-            <p class="footer__title">Socials</p>
-            <a class="footer__link" href="#">Instagram</a>
-            <a class="footer__link" href="#">Facebook</a>
-        </div>
-    </footer>
-
-    {% block js %}
-    {% endblock %}
-
-</body>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block page-title %}{% endblock %}
+        </title>
+        <link rel="shortcut icon"
+              href="{% static 'images/favicon.png' %}"
+              type="image/x-icon">
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header class="header">
+            <a href="{% url 'home__page' %}">
+                <img class="header__logo" src="{% static 'images/logo.svg' %}" alt="logo">
+            </a>
+            <div class="header__store">
+                <a href="#">
+                    <img src="{% static 'images/googlestore.svg' %}"
+                         alt="apple"
+                         class="header__apple">
+                </a>
+                <a href="#">
+                    <img src="{% static 'images/appstore.svg' %}"
+                         alt="google"
+                         class="header__google">
+                </a>
+            </div>
+            <div class="header__login">
+                {% if user.is_authenticated %}
+                    <a class="header__user">Hello, {{ user.username }}!</a>
+                {% else %}
+                    <a class="header__sign-in" href="{% url 'login' %}">SING IN</a>
+                    <a class="header__sign-up" href="{% url 'sign_up' %}">SING UP</a>
+                {% endif %}
+            </div>
+        </header>
+        {% block body %}{% endblock %}
+        <nav class="nav">
+            <a href="{% url 'menu' %}" class="nav__item nav__menu hvr-grow">Menu</a>
+            <a href="{% url 'news' %}" class="nav__item nav__news hvr-grow">News</a>
+            <a href="{% url 'about' %}" class="nav__item nav__about hvr-grow">Who we are</a>
+        </nav>
+        <footer class="footer">
+            <div class="footer__rest">
+                <p class="footer__title">Our restaurants</p>
+                <a class="footer__link" href="#">Bian Dang</a>
+                <a class="footer__link" href="#">A Burgers</a>
+                <a class="footer__link" href="#">Mission Saigon</a>
+                <a class="footer__link" href="#">Out Fry</a>
+                <a class="footer__link" href="#">Stacksando</a>
+            </div>
+            <div class="footer__find_us">
+                <p class="footer__order">Order on</p>
+                <a class="footer__link" href="#">Download on Android</a>
+                <a class="footer__link" href="#">Download on IOS</a>
+            </div>
+            <div class="footer__corporate">
+                <p class="footer__title">Corporate</p>
+                <a class="footer__link" href="#">Contact</a>
+                <a class="footer__link" href="#">Our story</a>
+                <a class="footer__link" href="#">Jobs</a>
+                <a class="footer__link" href="#">Support</a>
+            </div>
+            <div class="footer__socials">
+                <p class="footer__title">Socials</p>
+                <a class="footer__link" href="#">Instagram</a>
+                <a class="footer__link" href="#">Facebook</a>
+            </div>
+        </footer>
+        {% block js %}{% endblock %}
+    </body>
 </html>
