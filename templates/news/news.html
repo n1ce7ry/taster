@@ -1,119 +1,49 @@
 {% extends 'base.html' %}
-
 {% load static %}
-
-{% block page-title %}
-Latest news, promotions and updates from your favorite taster food delivery service
-{% endblock %}
-
+{% block page-title %}Latest news, promotions and updates from your favorite taster food delivery service{% endblock %}
 {% block body %}
-
-<div class="featured_news">
-    <div class="featured_news__left">
-        <h1 class="featured_news__title">Featured News</h1>
-        <img src="{% static 'images/area.png' %}" alt="delivery area" class="featured_news__img">
-        <p class="featured_news__date pl-4">07/25/2023</p>
-        <p class="featured_news__subtitle"><a href="#">Taster expands delivery area: now in your neighborhood!</a></p>
-    </div>
-    <div class="featured_news__right">
-        <div class="featured_news__card">
-            <div class="card__left">
-                <p class="featured_news__date">07/15/2023</p>
-                <p class="card__text">
-                    <a class="card__text" href="{% url 'login' %}">
-                    4Grubhub and Amazon
-                    Extend One-Year Free
-                    Grubhub+ Offer for your 300 backs...
-                    </a>
-                </p>
-            </div>
-            <div class="card__right">
-                <img src="{% static 'images/card.jpeg' %}" alt="news" class="card__img">
-            </div>
+    <div class="featured_news">
+        <div class="featured_news__left">
+            <h1 class="featured_news__title">Featured News</h1>
+            <img src="{{ last_featured_news.image.url }}"
+                 alt="delivery area"
+                 class="featured_news__img">
+            <p class="featured_news__date pl-4">{{ last_featured_news.created_at|date:"m/d/y" }}</p>
+            <p class="featured_news__subtitle">
+                <a href="#">{{ last_featured_news.title|truncatewords:20 }}</a>
+            </p>
         </div>
-        <div class="featured_news__card">
-            <div class="card__left">
-                <p class="featured_news__date">07/15/2023</p>
-                <p class="card__text">
-                    <a class="card__text" href="{% url 'login' %}">
-                    4Grubhub and Amazon
-                    Extend One-Year Free
-                    Grubhub+ Offer for your 300 backs...
-                    </a>
-                </p>
-            </div>
-            <div class="card__right">
-                <img src="{% static 'images/card.jpeg' %}" alt="news" class="card__img">
-            </div>
-        </div>
-        <div class="featured_news__card">
-            <div class="card__left">
-                <p class="featured_news__date">07/15/2023</p>
-                <p class="card__text">
-                    <a class="card__text" href="{% url 'login' %}">
-                    4Grubhub and Amazon
-                    Extend One-Year Free
-                    Grubhub+ Offer for your 300 backs...
-                    </a>
-                </p>
-            </div>
-            <div class="card__right">
-                <img src="{% static 'images/card.jpeg' %}" alt="news" class="card__img">
-            </div>
-        </div>
-        <div class="featured_news__card">
-            <div class="card__left">
-                <p class="featured_news__date">07/15/2023</p>
-                <p class="card__text">
-                    <a class="card__text" href="{% url 'login' %}">
-                    4Grubhub and Amazon
-                    Extend One-Year Free
-                    Grubhub+ Offer for your 300 backs...
-                    </a>
-                </p>
-            </div>
-            <div class="card__right">
-                <img src="{% static 'images/card.jpeg' %}" alt="news" class="card__img">
-            </div>
+        <div class="featured_news__right">
+            {% for news in featured_news %}
+                <div class="featured_news__card">
+                    <div class="card__left">
+                        <p class="featured_news__date">{{ news.created_at|date:"m/d/y" }}</p>
+                        <p class="card__text">
+                            <a class="card__text" href="{% url 'login' %}">{{ news.title|truncatewords:20 }}</a>
+                        </p>
+                    </div>
+                    <div class="card__right">
+                        <img src="{{ news.image.url }}" alt="news" class="card__img">
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
-</div>
-
-<div class="latest_news">
-    <div class="latest_news__left">
-        <h3 class="latest_news__title">Latest News</h3>
-        <a href="#" class="latest_news__link">EXPLORE ALL</a>
-    </div>
-    <div class="latest_news__right">
-        <div class="latest_news__card">
-            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
-            <p class="latest_news__date">Dec 21, 2023</p>
+    <div class="latest_news">
+        <div class="latest_news__left">
+            <h3 class="latest_news__title">Latest News</h3>
+            <a id='explore' class="latest_news__link">EXPLORE ALL</a>
         </div>
-        <div class="latest_news__card">
-            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
-            <p class="latest_news__date">Dec 21, 2023</p>
-        </div>
-        <div class="latest_news__card">
-            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
-            <p class="latest_news__date">Dec 21, 2023</p>
-        </div>
-        <div class="latest_news__card">
-            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
-            <p class="latest_news__date">Dec 21, 2023</p>
-        </div>
-        <div class="latest_news__card">
-            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
-            <p class="latest_news__date">Dec 21, 2023</p>
-        </div>
-        <div class="latest_news__card">
-            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
-            <p class="latest_news__date">Dec 21, 2023</p>
-        </div>
-        <div class="latest_news__card">
-            <a href="#" class="latest_news__text">Grubhub Selects 64 Food-Focused Chicago Nonprofits in Inaugural…</a>
-            <p class="latest_news__date">Dec 21, 2023</p>
+        <div class="latest_news__right">
+            {% for news in other_news %}
+                <div class="latest_news__card {% if forloop.counter > 5 %}hidden{% endif %} {% if forloop.counter == 5 %}special_card{% endif %}">
+                    <a href="#" class="latest_news__text">{{ news.title|truncatechars:80 }}</a>
+                    <p class="latest_news__date">{{ news.created_at|date:"D j, o" }}</p>
+                </div>
+            {% endfor %}
         </div>
     </div>
-</div>
-
+{% endblock %}
+{% block js %}
+    <script src="{% static 'js/main.js' %}"></script>
 {% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrastyles %}
+    <link rel="stylesheet" href="{% static 'css/hystmodal.min.css' %}">
+{% endblock %}
+{% block page-title %}Taster menu: fresh ingredients, wide selection, fast delivery{% endblock %}
+{% block body %}
+    <div class="menu">
+        <h1 class="menu__title">
+            <a class="menu__title-back" href="{% url 'menu' %}#{{ food_type.id }}">Menu</a> / {{ food_type }}
+        </h1>
+        <div class="foods extra__menu__food">
+            {% for food in foods %}
+                <div class="food">
+                    <img class="food__img" src="{{ food.image.url }}" alt="{{ food.name }}">
+                    <a href="#" data-hystmodal="#_{{ food.id }}" class="food__name">{{ food.name|truncatechars:20 }}</a>
+                    <p class="food__weight">{{ food.weight }}</p>
+                    <button class="food__button hvr-bounce-to-bottom">
+                        £{{ food.price }} <span>+</span>
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+        {% for food in foods %}
+            <div class="hystmodal" id="_{{ food.id }}" aria-hidden="true">
+                <div class="hystmodal__wrap">
+                    <div class="hystmodal__window" role="dialog" aria-modal="true">
+                        <button data-hystclose class="hystmodal__close">Закрыть</button>
+                        <div class="food">
+                            <img class="food__img" src="{{ food.image.url }}" alt="{{ food.name }}">
+                            <p class="food__name">{{ food.name|truncatechars:20 }}</p>
+                            <p class="food__weight">{{ food.weight }}</p>
+                            <button class="food__button hvr-bounce-to-bottom">
+                                £{{ food.price }} <span>+</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block js %}
+    <script src="{% static 'js/hystmodal.min.js' %}"></script>
+{% endblock %}

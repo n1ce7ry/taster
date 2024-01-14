@@ -47,9 +47,11 @@ class UserRegistrationForm(forms.ModelForm):
         ) 
         self.fields['password_repeat'].label = False
     
+
     class Meta:
         model = User
         fields = ('username', 'email')
+
 
     def clean_password_repeat(self):
         cd = self.cleaned_data

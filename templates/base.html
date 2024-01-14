@@ -11,6 +11,7 @@
               href="{% static 'images/favicon.png' %}"
               type="image/x-icon">
         <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        {% block extrastyles %}{% endblock %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>

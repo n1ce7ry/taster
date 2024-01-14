@@ -3,6 +3,7 @@
 __pycache__
 .DS_Store
 env.sh
+media/
 db.sqlite3
 my_py.cache/
 htmlcov/
