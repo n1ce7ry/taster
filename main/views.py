@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
+from django.contrib.auth import logout
 
 
 def home(request):
@@ -21,3 +22,8 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'authorization/signup.html', {'user_form': user_form})
+
+
+def user_logout(request):
+    logout(request)
+    return redirect('home__page')

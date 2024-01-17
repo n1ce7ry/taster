@@ -44,16 +44,18 @@
                             </div>
                             <div class="window__right">
                                 <h3 class="window__title">{{ food.name }}</h3>
-                                <p class="window__description">
-                                    Chicken burger is a great gastronomic combination of juicy chicken patty cooked to golden crust, aromatic fresh vegetables and spicy sauce, complemented by a soft, lightly toasted bun.
-                                </p>
-                                <p class="window__weight">{{ food.weight }}g / 451ccal</p>
-                                <button type="submit"
-                                        id="close-btn"
-                                        class="window__button hvr-bounce-to-bottom">
-                                    <div>Add 1 to order</div>
-                                    <div>£{{ food.price }} +</div>
-                                </button>
+                                <p class="window__description">{{ food.description }}</p>
+                                <p class="window__weight">{{ food.weight }}g / {{ food.calories }}ccal</p>
+                                <form class="food__form" action="{% url 'cart_add' food.id %}" data-food-id={{ food.id }} method="post">
+                                    {{ cart_product_form }}
+                                    {% csrf_token %}
+                                    <button type="submit"
+                                            id="close-btn"
+                                            class="window__button hvr-bounce-to-bottom">
+                                        <div>Add 1 to order</div>
+                                        <div>£{{ food.price }} +</div>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

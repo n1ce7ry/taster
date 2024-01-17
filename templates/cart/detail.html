@@ -7,24 +7,30 @@
     <h1 class="cart__title">Cart</h1>
     <div class="cart">
         <div class="cart__left">
-            {% for item in cart %}
-                {% with food=item.food %}
-                    <div class="cart__item">
-                        <div class="item__left">
-                            <img class="item__img" src="{{ food.image.url }}" alt="{{ food.name }}">
-                            <div class="item__info">
-                                <p class="item__name">{{ food.name }}</p>
-                                <p class="item__weight">{{ food.weight }}g / 500ccal</p>
+            {% if cart %}
+                {% for item in cart %}
+                    {% with food=item.food %}
+                        <div class="cart__item">
+                            <div class="item__left">
+                                <img class="item__img" src="{{ food.image.url }}" alt="{{ food.name }}">
+                                <div class="item__info">
+                                    <p class="item__name">{{ food.name }}</p>
+                                    <p class="item__weight">{{ food.weight }}g / {{ food.calories }}ccal</p>
+                                </div>
+                            </div>
+                            <div class="item__right">
+                                <p class="item__price">£{{ item.price }} X {{ item.quantity }}</p>
+                                <a class="food__button hvr-bounce-to-bottom"
+                                   href="{% url 'cart_remove' food.id %}">Remove</a>
                             </div>
                         </div>
-                        <div class="item__right">
-                            <p class="item__price">£{{ item.price }} X {{ item.quantity }}</p>
-                            <a class="food__button hvr-bounce-to-bottom"
-                               href="{% url 'cart_remove' food.id %}">Remove</a>
-                        </div>
-                    </div>
-                {% endwith %}
-            {% endfor %}
+                    {% endwith %}
+                {% endfor %}
+            {% else %}
+                <p class="empty__cart">
+                    Your cart is empty. <a href="{% url 'menu' %}">Hurry up and add something!</a>
+                </p>
+            {% endif %}
         </div>
         <div class="cart__right">
             <p class="cart__total">

@@ -20,12 +20,17 @@ function addToCart(food_id, csrfToken) {
     
     .then(data => {
       if (data.success === 'success') {
+
         updateCart(data.total_cart_price, data.total_quantity);
+
         const Toast = Swal.mixin({
             toast: true,
             position: "bottom-end",
             showConfirmButton: false,
             timer: 3000,
+            customClass: {
+              title: 'title__alert',
+            },
             background: '#FAEDD4',
             color: '#FB3B2D',
             timerProgressBar: true,
@@ -36,7 +41,7 @@ function addToCart(food_id, csrfToken) {
         });
           Toast.fire({
             icon: "success",
-            title: "Successfully added to your cart"
+            title: data.food + " " + "added to your cart"
         });
       } else {
         Swal.fire({
@@ -65,5 +70,14 @@ document.querySelectorAll('.food__button').forEach(button => {
         const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value
         const food_id = event.target.closest('.food__form').getAttribute('data-food-id');
         addToCart(food_id, csrfToken);
+    });
+});
+
+document.querySelectorAll('.window__button').forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value
+        const cart_food_id = event.target.closest('.food__form').getAttribute('data-food-id');
+        addToCart(cart_food_id, csrfToken);
     });
 });

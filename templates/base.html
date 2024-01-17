@@ -34,6 +34,7 @@
             <div class="header__login">
                 {% if user.is_authenticated %}
                         <a class="header__user">Hello, {{ user.username }}!</a>
+                        <a class="header__sign-up" href="{% url 'logout' %}">LOGOUT</a>
                     {% block user_cart %}
                         <a class="header__cart-link" href="{% url 'cart_detail' %}">CART • <span id="total_quantity">{{ cart.get_total_quanity }}</span> • £<span id="total_cart">{{ cart.get_total_price }}</span></a>
                     {% endblock %}

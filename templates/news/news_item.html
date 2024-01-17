@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page-title %}{{ news.title }}{% endblock %}
+{% block body %}
+<div class="featured_news">
+  <div class="featured_news__left">
+    <h1 class="featured_news__title"><a class="menu__title-back" href="{% url 'news' %}">News</a> /
+      {{ news.title | truncatechars:13 }}</h1>
+    <img src="{{ news.image.url }}" class="featured_news__img">
+    <p class="featured_news__date pl-4">{{ news.created_at|date:"m/d/y" }}</p>
+    <p class="featured_news__subtitle not_link">
+      {{ news.title|truncatewords:20 }}
+    </p>
+    <p class="news__text">{{ news.text|linebreaksbr }}</p>
+  </div>
+  <div class="featured_news__right">
+    {% for news in featured_news %}
+    <div class="featured_news__card">
+      <div class="card__left">
+        <p class="featured_news__date">{{ news.created_at|date:"m/d/y" }}</p>
+        <p class="card__text">
+          <a class="card__text" href="{% url 'news_item' news.id %}">{{ news.title|truncatewords:20 }}</a>
+        </p>
+      </div>
+      <div class="card__right">
+        <img src="{{ news.image.url }}" alt="news" class="card__img">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="latest_news">
+  <div class="latest_news__left">
+    <h3 class="latest_news__title">Latest News</h3>
+    <a id='explore' class="latest_news__link">EXPLORE ALL</a>
+  </div>
+  <div class="latest_news__right">
+    {% for news in other_news %}
+    <div
+      class="latest_news__card {% if forloop.counter > 5 %}hidden{% endif %} {% if forloop.counter == 5 %}special_card{% endif %}">
+      <a href="{% url 'news_item' news.id %}" class="latest_news__text">{{ news.title|truncatechars:80 }}</a>
+      <p class="latest_news__date">{{ news.created_at|date:"D j, o" }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
