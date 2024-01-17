@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from menu.models import Food, FoodType
+from cart.forms import CartAddFoodForm
 
 
 def menu(request):
@@ -15,10 +16,12 @@ def menu(request):
         if len(food_dict[food_type]) < 5:
             food_dict[food_type].append(food)
 
+    cart_product_form = CartAddFoodForm()
     
     context = {
         'foods': food_dict,
         'food_types': FoodType.objects.all(),
+        'cart_product_form': cart_product_form,
     }
 
     return render(request, 'menu/menu.html', context=context)

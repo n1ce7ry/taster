@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page-title %}Cart Taster: Checkout - Fast delivery of your favorite foods{% endblock %}
+{% block cart %}{% endblock %}
+{% block user_cart %}{% endblock %}
+{% block body %}
+    <h1 class="cart__title">Cart</h1>
+    <div class="cart">
+        <div class="cart__left">
+            {% for item in cart %}
+                {% with food=item.food %}
+                    <div class="cart__item">
+                        <div class="item__left">
+                            <img class="item__img" src="{{ food.image.url }}" alt="{{ food.name }}">
+                            <div class="item__info">
+                                <p class="item__name">{{ food.name }}</p>
+                                <p class="item__weight">{{ food.weight }}g / 500ccal</p>
+                            </div>
+                        </div>
+                        <div class="item__right">
+                            <p class="item__price">£{{ item.price }} X {{ item.quantity }}</p>
+                            <a class="food__button hvr-bounce-to-bottom"
+                               href="{% url 'cart_remove' food.id %}">Remove</a>
+                        </div>
+                    </div>
+                {% endwith %}
+            {% endfor %}
+        </div>
+        <div class="cart__right">
+            <p class="cart__total">
+                Total<a class="cart__clear" href="{% url 'clear' %}">Clear All</a>
+            </p>
+            <p class="cart__total-sum"
+            </p>
+            {% if cart %}
+                {{ cart.get_total_quanity }}
+            {% else %}
+                0
+            {% endif %}
+            items for £{{ cart.get_total_price }}
+        </p>
+        <a href="{% url 'menu' %}" class="cart__btn hvr-sweep-to-right">Checkout</a>
+    </div>
+</div>
+{% endblock %}

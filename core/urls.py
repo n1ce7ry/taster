@@ -6,8 +6,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    path('news/', include('news.urls')),
     path('menu/', include('menu.urls')),
+    path('cart/', include('cart.urls')),
+    path('news/', include('news.urls')),
     path("__debug__/", include("debug_toolbar.urls")),
 ]
 
