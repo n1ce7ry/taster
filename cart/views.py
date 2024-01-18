@@ -45,3 +45,7 @@ def clear(request):
 def cart_detail(request):
     cart = Cart(request)
     return render(request, 'cart/detail.html', {'cart': cart})
+
+
+def order(request):
+    return render(request, 'cart/checkout.html')

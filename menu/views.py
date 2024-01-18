@@ -17,6 +17,7 @@ def menu(request):
             food_dict[food_type].append(food)
 
     cart_product_form = CartAddFoodForm()
+
     
     context = {
         'foods': food_dict,

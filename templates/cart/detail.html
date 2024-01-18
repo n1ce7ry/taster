@@ -45,7 +45,7 @@
             {% endif %}
             items for £{{ cart.get_total_price }}
         </p>
-        <a href="{% url 'menu' %}" class="cart__btn hvr-sweep-to-right">Checkout</a>
+        <a href="{% url 'order' %}" class="cart__btn hvr-sweep-to-right">Checkout</a>
     </div>
 </div>
 {% endblock %}

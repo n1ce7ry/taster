@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page-title %}Coming Soon!{% endblock %}
+{% block cart %}{% endblock %}
+{% block user_cart %}{% endblock %}
+{% block body %}
+<h1 class="order__title"><a class="order__link" href="{% url 'cart_detail'  %}">Cart</a> / Order</h1>
+    <div class="order__container">
+	    <p class="order__text">Thank you for choosing us!<br>Food ordering will be available soon</p>
+    </div>
+{% endblock %}

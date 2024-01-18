@@ -1,5 +1,5 @@
 function addToCart(food_id, csrfToken) {
-    fetch('http://localhost:8000' + '/cart/add/' + food_id + '/', {
+    fetch('http://' + window.location.host + '/cart/add/' + food_id + '/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
