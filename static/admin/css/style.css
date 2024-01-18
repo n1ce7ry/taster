@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Barlow";
+    font-style: light;
+    font-weight: 300;
+    src: local("Barlow"),
+         url("../fonts/Barlow-Light.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Barlow"),
+         url("../fonts/Barlow-Regular.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-style: medium;
+    font-weight: 500;
+    src: local("Barlow"),
+         url("../fonts/Barlow-Medium.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-weight: 600;
+    src: local("Barlow"),
+         url("../fonts/Barlow-SemiBold.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-style: bold;
+    font-weight: 700;
+    src: local("Barlow"),
+         url("../fonts/Barlow-Bold.woff2") format("woff2"),
+}
+
+:root {
+    --beige: #FAEDD4;
+    --red: #FB3B2D;
+    --blue: #8899CC;
+    --orange: #FFAF00;
+    --gray: #6D6D6D;
+}
+
+* {
+  font-family: Barlow, sans-serif
+}

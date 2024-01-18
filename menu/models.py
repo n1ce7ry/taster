@@ -4,6 +4,7 @@ from django.db import models
 class FoodType(models.Model):
     name = models.CharField(max_length=80)
     slug = models.SlugField(max_length=200, unique=True, db_index=True)
+    priority = models.IntegerField()
 
 
     def __str__(self):

@@ -5,7 +5,10 @@ from cart.forms import CartAddFoodForm
 
 def menu(request):
 
-    foods = Food.objects.select_related('food_type').all()
+    foods = Food.objects.select_related('food_type').order_by(
+            'food_type__priority',
+            'food_type__name',
+            )
 
     food_dict = {}
 
